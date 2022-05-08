@@ -30,7 +30,7 @@ app.post('/generate', (req, res) => {
 
 app.get('/validate', (req, res) => {
     try {
-        const token = req.session?.JwtHttpOnly; // with http-only
+        const token = req.session.JwtHttpOnly; // with http-only
         // const { token } = req.headers; // no http-only
         jwt.verify(token, process.env.JWT_PK, (err, decoded) => {
             if (err) {
